@@ -54,6 +54,31 @@ id	name  	marks
 4	  Nasim	  99.97
 5	  Ayush 	110
 
+#To Restore delta lake table to specific version if by mistake table is deleted
+=================================================================================
+%sql
+DELETE FROM student;
+
+%sql
+SELECT * FROM student;
+
+Output:
+id name marks
+
+%sql
+RESTORE TABLE student TO VERSION AS OF 2;
+
+%sql
+SELECT * FROM student;
+
+Output:
+id	name	  marks
+1	  Amrit	  85.5
+2	  Manash	99.9
+3	  Kumar	  100
+4	  Nasim	  99.97
+5	  Ayush	  110
+
 
 
 
