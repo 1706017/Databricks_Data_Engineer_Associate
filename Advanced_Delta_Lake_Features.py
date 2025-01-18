@@ -79,6 +79,17 @@ id	name	  marks
 4	  Nasim	  99.97
 5	  Ayush	  110
 
+#Compacting smaller files to create larger files with Zorder Indexing for faster reading
+=========================================================================================
+OPTIMIZE student 
+ZORDER BY id;
+
+#Vacuum a delta tables so as to remove the uncommited files and to remove the older version of delta tables
+============================================================================================================
+VACUUM student;
+
+
+
 
 
 
